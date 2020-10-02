@@ -1,11 +1,20 @@
-function deepPrint(x:any){
-    if(x){
-    return x;
-    } 
-    else {
-        return "no";
-    }  
+function deepPrint (x: Array<number> | number | String | object | boolean, vuelta : number = 0){
+    if (typeof x === "string" 
+    || typeof x === "number" 
+    || typeof x === "boolean"){
+        return x;
+        }
+    if (typeof x === "object"){ 
+        return Object.values(x);
+    }
+    else{
+        let dev: String = "";
+        dev = dev + x[vuelta];
+        deepPrint(x,vuelta++);
+        return dev;
+    }
 }
+
 let a : Array<Number> = [2,3,4];
 console.log(deepPrint (a));
 let b: number = 3;
