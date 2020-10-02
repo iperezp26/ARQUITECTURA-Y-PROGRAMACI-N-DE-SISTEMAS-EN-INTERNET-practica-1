@@ -1,0 +1,12 @@
+function deelClone (x: object){
+    let y : object;
+    y = x ;
+    return y;
+}
+
+let a : Array<Number> = [2,3,4];
+console.log(deepPrint (a));
+let b: number = 3;
+console.log(deepPrint (b));
+let c : string = " hola ¬¬";
+console.log(deepPrint (c));
